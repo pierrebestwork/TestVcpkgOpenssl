@@ -1,0 +1,17 @@
+{
+    "name": "tcsl-project-packages",
+    "version-string": "0.1.0-dev",
+    "builtin-baseline": "0dc27b9b672cb9d069cf58c48f3ae3f7395d108b",
+    "dependencies": [
+        {
+            "name": "openssl",
+            "version>=": "1.1.1i"
+        }
+    ],
+    "overrides": [
+        {
+            "name": "openssl",
+            "version-string": "1.1.1i"
+        }
+    ]
+}
