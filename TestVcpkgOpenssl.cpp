@@ -6,10 +6,11 @@
 
 #include <openssl/evp.h>
 
+
 int main()
 {
-    size_t outLen{0};
-    const auto SHA256HashLength{32};
+    size_t                                      outLen{0};
+    const auto                                  SHA256HashLength{32};
     std::array<unsigned char, SHA256HashLength> messageDigest{};
 
     const std::string input{
@@ -22,7 +23,7 @@ int main()
             Nullam rhoncus massa vel venenatis faucibus. Mauris tristique dapibus tempus. Integer ligula sapien, blandit sit amet volutpat et, tempus vulputate tellus. Sed et porttitor velit. Cras porta ullamcorper diam vitae maximus. Maecenas accumsan ut sem in mattis. Nunc venenatis tellus justo, et venenatis odio vestibulum ac. Phasellus sagittis velit vel scelerisque lobortis. Sed sed ligula elit. Morbi et orci nisi. Nam efficitur aliquet dui, nec sollicitudin neque efficitur sit amet. Etiam et tellus laoreet, molestie urna eu, suscipit arcu. Morbi dictum felis libero, ut dapibus dolor tincidunt quis.SHA256_HASH_LENGTH
         )"
     };
-    auto*  ctx{EVP_MD_CTX_new()};
+    auto* ctx{EVP_MD_CTX_new()};
     EVP_DigestInit(ctx, EVP_sha256());
     EVP_DigestUpdate(ctx, input.c_str(), input.length());
     EVP_DigestFinal_ex(ctx, messageDigest.data(), &outLen);
@@ -32,10 +33,10 @@ int main()
     for (const auto& c : messageDigest)
     {
         std::cout << std::hex << static_cast<int>(c);
-        
     }
     std::cout << std::endl;
 }
+
 
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu
 // Debug program: F5 or Debug > Start Debugging menu
